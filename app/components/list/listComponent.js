@@ -6,7 +6,6 @@ angular.module('auditoriesList').component('list', {
       this.auditories = result;
       $scope.totalItems = this.auditories.length;
     });
-    $scope.currentPage = 1;
     $scope.itemsPerPage = 10;
     $scope.maxSize = 10;
   }   
