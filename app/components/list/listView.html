@@ -1,0 +1,19 @@
+<div class="container">
+  <label>Filter by campus:
+    <input   ng-model="search.buildingNumber.name">
+  </label>
+  <label>Filter by auditory type:
+    <input   ng-model="search.auditoryType.name">
+  </label>
+  <label>Search by auditory number:
+    <input   ng-model="search.name">
+  </label>
+</div>
+
+<div class="list-group container">
+  <div class="list-group-item" ng-repeat="auditory in auditoriesController.auditories.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))|toArray | filter:search">
+    <h3>Auditory#{{auditory['name']}}</h3>
+    <a ui-sref="auditory({auditoryId:auditory.id})">more</a>
+  </div>
+  <ul class="pagination-sm" uib-pagination boundary-link-numbers="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" items-per-page="itemsPerPage"></ul>
+</div>

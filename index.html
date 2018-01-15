@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="auditoriesList">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" defer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-sanitize.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-toarrayfilter/1.0.3/toArrayFilter.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js" defer></script>
+  <script src="//npmcdn.com/@uirouter/visualizer@4.0.2" defer></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js" defer></script>
+  <script src="app/app.module.js" defer></script>
+  <script src="app/app.routes.js" defer></script>
+  <script src="app/components/auditory/auditoryComponent.js" defer></script>
+  <script src="app/components/list/listComponent.js" defer></script>
+  <script src="app/shared/factories/auditoriesFactory.js" defer></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <!--  Store Header  -->
+  <header>
+    <h1 class="text-center">Auditories list</h1>
+  </header>
+  <ui-view></ui-view>
+</body>
+
+</html>
