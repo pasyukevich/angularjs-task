@@ -4,8 +4,8 @@ angular.module('auditoriesList').component('list', {
   controller: function (auditoriesFactory, $scope) {
     auditoriesFactory.getAuditories().then((result) => {
       this.auditories = result;
-      $scope.totalItems = this.auditories.length;
     });
+    $scope.currentPage=1;
     $scope.itemsPerPage = 10;
     $scope.maxSize = 10;
   }   
