@@ -11,9 +11,9 @@
 </div>
 
 <div class="list-group container">
-  <div class="list-group-item" ng-repeat="auditory in auditoriesController.auditories.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))|toArray | filter:search">
+  <div class="list-group-item" ng-repeat="auditory in filterData=(auditoriesController.auditories|toArray | filter:search) | limitTo:itemsPerPage:itemsPerPage*(currentPage-1)">
     <h3>Auditory#{{auditory['name']}}</h3>
     <a ui-sref="auditory({auditoryId:auditory.id})">more</a>
   </div>
-  <ul class="pagination-sm" uib-pagination boundary-link-numbers="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" items-per-page="itemsPerPage"></ul>
+  <ul class="pagination-sm" uib-pagination boundary-link-numbers="true" total-items="filterData.length" max-size="maxSize" ng-model="currentPage"></ul>
 </div>
