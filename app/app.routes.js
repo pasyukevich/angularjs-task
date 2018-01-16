@@ -12,7 +12,7 @@ angular.module('auditoriesList').config(function ($stateProvider, $urlRouterProv
         {
             name:'NotFound',
             url:'/NotFound',
-            templateUrl:'app/components/notFound/notFoundView.html'
+            templateUrl:'components/notFound/notFoundView.html'
         }
     ];
     states.forEach(function (state) {

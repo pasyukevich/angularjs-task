@@ -1,5 +1,5 @@
 angular.module('auditoriesList').component('list', {
-  templateUrl: 'app/components/list/listView.html',
+  templateUrl: 'components/list/listView.html',
   controllerAs: 'auditoriesController',
   controller: function (auditoriesFactory, $scope) {
     auditoriesFactory.getAuditories().then((result) => {
