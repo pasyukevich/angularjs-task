@@ -53,12 +53,12 @@ gulp.task('copyIndex',['concat','templateRefactoring'], (done) => {
     .pipe(inject(vendorSources, {
       name: 'vendor',
       ignorePath: 'node_modules',
-      addPrefix: 'dist/vendor'
+      addPrefix: 'vendor'
     }))
     .pipe(inject(appSources, {
       name: 'app'
     }))
-    .pipe(gulp.dest('./dist', {
+    .pipe(gulp.dest('./', {
       overwrite: true
     }));
 });

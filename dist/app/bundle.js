@@ -32,28 +32,6 @@ angular.module('auditoriesList').run(function ($uiRouter) {
     });
     el.className = 'statevis';
 });
-angular.module('auditoriesList').component('auditory',{
-  templateUrl:'components/auditory/auditoryView.html',
-  controllerAs:'auditoryController',
-  controller: function(auditoriesFactory, $stateParams, $state) {
-    auditoriesFactory.getAuditoryById($stateParams.auditoryId).then((result) => {
-      if (result===undefined) $state.go('NotFound');
-      this.auditory = result;
-    });
-  }
-});
-angular.module('auditoriesList').component('list', {
-  templateUrl: 'components/list/listView.html',
-  controllerAs: 'auditoriesController',
-  controller: function (auditoriesFactory, $scope) {
-    auditoriesFactory.getAuditories().then((result) => {
-      this.auditories = result;
-    });
-    $scope.currentPage=1;
-    $scope.itemsPerPage = 10;
-    $scope.maxSize = 10;
-  }   
-});
 angular.module('auditoriesList').factory('auditoriesFactory', ($http) => {
     let auditoriePromise = null;
 
@@ -76,4 +54,26 @@ angular.module('auditoriesList').factory('auditoriesFactory', ($http) => {
             });
         }
     }
+});
+angular.module('auditoriesList').component('auditory',{
+  templateUrl:'components/auditory/auditoryView.html',
+  controllerAs:'auditoryController',
+  controller: function(auditoriesFactory, $stateParams, $state) {
+    auditoriesFactory.getAuditoryById($stateParams.auditoryId).then((result) => {
+      if (result===undefined) $state.go('NotFound');
+      this.auditory = result;
+    });
+  }
+});
+angular.module('auditoriesList').component('list', {
+  templateUrl: 'components/list/listView.html',
+  controllerAs: 'auditoriesController',
+  controller: function (auditoriesFactory, $scope) {
+    auditoriesFactory.getAuditories().then((result) => {
+      this.auditories = result;
+    });
+    $scope.currentPage=1;
+    $scope.itemsPerPage = 10;
+    $scope.maxSize = 10;
+  }   
 });
